@@ -1,14 +1,14 @@
 import { AccountBalanceAtom, TotalExpenseAtom, TotalIncomeAtom } from '@/store/atoms'
 import { ArrowDownCircleIcon, ArrowUpCircleIcon } from '@heroicons/react/16/solid'
-import { useRecoilStateLoadable} from 'recoil'
+import { useRecoilValueLoadable} from 'recoil'
 import { Skeleton } from "@/components/ui/skeleton"
 
 
 
 const AccountCard = () => {
-  const [totalIncome,setTotalIncome] = useRecoilStateLoadable(TotalIncomeAtom);
-  const [totalExpenses,settotalExpenses] = useRecoilStateLoadable(TotalExpenseAtom);
-  const [AccountBalance,setAccountBalance] = useRecoilStateLoadable(AccountBalanceAtom);
+  const totalIncome = useRecoilValueLoadable(TotalIncomeAtom);
+  const totalExpenses = useRecoilValueLoadable(TotalExpenseAtom);
+  const AccountBalance = useRecoilValueLoadable(AccountBalanceAtom);
 
  if(totalIncome.state=="loading" || totalExpenses.state=="loading" || AccountBalance.state=="loading"){
   return <Skeleton className='w-[230px] h-[140px] sm:w-[270px] p-8 rounded-xl bg-slate-900'/>

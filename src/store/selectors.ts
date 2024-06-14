@@ -5,7 +5,7 @@ import { selector } from "recoil";
 export const TotalIncomeSelector = selector({
     key: 'totalIncomeSelector',
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    get: async ({ get }) => {
+    get: async () => {
       try {
         const res = await axios.get(`${BACKEND_URL}/v1/account/income`, {
           headers: {
