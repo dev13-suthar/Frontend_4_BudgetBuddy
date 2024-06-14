@@ -1,5 +1,4 @@
 import { FunnelIcon } from '@heroicons/react/16/solid'
-import React from 'react'
 
 const SpentByCategory = () => {
   return (
